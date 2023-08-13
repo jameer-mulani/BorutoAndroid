@@ -6,6 +6,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.borutoandroid.presentation.screens.splash.SplashScreen
 import com.example.borutoandroid.util.Constants
 
 @Composable
@@ -16,7 +17,7 @@ fun SetupNavGraph(navHostController: NavHostController) {
     ) {
 
         composable(route = Screen.Splash.route) {
-
+            SplashScreen(navHostController = navHostController)
         }
 
         composable(route = Screen.Welcome.route) {

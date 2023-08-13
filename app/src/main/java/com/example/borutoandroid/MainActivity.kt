@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.borutoandroid.navigation.SetupNavGraph
 import com.example.borutoandroid.ui.theme.BorutoAndroidTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -19,8 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             BorutoAndroidTheme {
                 navHostController = rememberNavController()
-
-
+                SetupNavGraph(navHostController = navHostController)
             }
         }
     }
