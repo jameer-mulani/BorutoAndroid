@@ -1,12 +1,14 @@
 package com.example.borutoandroid.ui.theme
 
 import android.app.Activity
+import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
@@ -58,6 +60,26 @@ fun BorutoAndroidTheme(
             val window = (view.context as Activity).window
             window.statusBarColor = colorScheme.primary.toArgb()
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
+        }
+    }
+
+//    val systemUiController = rememberSystemUiController()
+//    if (darkTheme){
+//        systemUiController.setSystemBarsColor(color = Color.Black)
+//    }
+
+
+    if (isSystemInDarkTheme()){
+        val mView = LocalView.current
+        if (!mView.isInEditMode){
+            SideEffect {
+                val activity = view.context as Activity
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    activity.window.statusBarColor = Color.Black.toArgb()
+//                WindowCompat.getInsetsController(activity.window, view).isAppearanceLightStatusBars = !darkTheme
+//                WindowCompat.getInsetsController(activity.window, view).isAppearanceLightNavigationBars = !darkTheme
+                }
+            }
         }
     }
 
