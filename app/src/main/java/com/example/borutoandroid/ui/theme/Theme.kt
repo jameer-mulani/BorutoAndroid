@@ -14,6 +14,7 @@ import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 import com.example.todoappstefan2023.ui.theme.Purple200
 import com.example.todoappstefan2023.ui.theme.Purple500
+import com.example.todoappstefan2023.ui.theme.Purple700
 import com.example.todoappstefan2023.ui.theme.PurpleGrey40
 
 private val DarkColorScheme = darkColors(
@@ -76,6 +77,18 @@ fun BorutoAndroidTheme(
                 val activity = view.context as Activity
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     activity.window.statusBarColor = Color.Black.toArgb()
+//                WindowCompat.getInsetsController(activity.window, view).isAppearanceLightStatusBars = !darkTheme
+//                WindowCompat.getInsetsController(activity.window, view).isAppearanceLightNavigationBars = !darkTheme
+                }
+            }
+        }
+    }else{
+        val mView = LocalView.current
+        if (!mView.isInEditMode){
+            SideEffect {
+                val activity = view.context as Activity
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    activity.window.statusBarColor = Purple700.toArgb()
 //                WindowCompat.getInsetsController(activity.window, view).isAppearanceLightStatusBars = !darkTheme
 //                WindowCompat.getInsetsController(activity.window, view).isAppearanceLightNavigationBars = !darkTheme
                 }
