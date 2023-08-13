@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">BorutoAndroid</string>
     <string name="app_logo">App Logo</string>
+    <string name="onboarding_greetings">Greetings</string>
+    <string name="onboarding_greeting_desc">Are you a Boruto fan? Because if you are then we have a great news for you!</string>
+    <string name="onboarding_explore">Explore</string>
+    <string name="onboarding_explore_desc">Find your favorite heroes and learn some of the things that you didn\'t know about.</string>
+    <string name="onboarding_power">Power</string>
+    <string name="onboarding_power_desc">Check out your hero\'s power and see how much are they strong comparing to others.</string>
+    <string name="onboarding_image">Onboarding image</string>
+    <string name="finish">Finish</string>
 </resources>

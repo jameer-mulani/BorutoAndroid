@@ -6,7 +6,7 @@ import androidx.compose.ui.graphics.Color
 
 val Purple200 = Color(0xFFBB86FC)
 val Purple500 = Color(0xFF6200EE)
-val Purple700   = Color(0xFF3700B3)
+val Purple700 = Color(0xFF3700B3)
 val Teal200 = Color(0xFF03DAC5)
 
 val PurpleGrey40 = Color(0xFF625b71)
@@ -21,6 +21,30 @@ val lowPriorityColor = Color(0xF34BDD3A)
 val mediumPriorityColor = Color(0xFFFFC300)
 val nonePriorityColor = Color(0xFF2F352E)
 
+
+val Colors.pagerIndicatorActiveColor: Color
+    @Composable
+    get() = if (isLight) Purple500 else Purple700
+
+val Colors.buttonBackgroundColor: Color
+    @Composable
+    get() = if (isLight) Purple500 else Purple700
+
+val Colors.pagerIndicatorInActiveColor: Color
+    @Composable
+    get() = if (isLight) Purple200 else PurpleGrey40
+val Colors.titleColor: Color
+    @Composable
+    get() = if (isLight) DarkGray else LightGray
+
+val Colors.descriptionColor: Color
+    @Composable
+    get() = if (isLight) DarkGray.copy(alpha = 0.5f) else LightGray.copy(alpha = 0.5f)
+
+val Colors.onBoardingScreenBackgroundColor: Color
+    @Composable
+    get() = if (isLight) Color.White else Color.Black
+
 val Colors.topAppBarContentColor: Color
     @Composable
     get() = if (isLight) Color.White else LightGray
@@ -29,19 +53,19 @@ val Colors.topAppBarBackgroundColor: Color
     @Composable
     get() = if (isLight) Purple500 else Color.Black
 
-val Colors.fabBackgroundColor : Color
+val Colors.fabBackgroundColor: Color
     @Composable
     get() = if (isLight) Teal200 else Purple700
 
-val Colors.todoItemBackgroundColor : Color
+val Colors.todoItemBackgroundColor: Color
     @Composable
     get() = if (isLight) Color.White else Color.DarkGray
 
-val Colors.todoTitleColor : Color
+val Colors.todoTitleColor: Color
     @Composable
     get() = if (isLight) Color.DarkGray else LightGray
 
 
-val Colors.todoDescColor : Color
+val Colors.todoDescColor: Color
     @Composable
     get() = if (isLight) DarkGray else LightGray
