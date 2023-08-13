@@ -15,4 +15,7 @@ object Constants {
     //DataStore prefs
     const val PREFERENCES_NAME = "boruto_prefs"
     const val SET_ONBOARDING_STATE_KEY = "set_onboarding_state"
+
+    //Retrofit
+    const val BASE_URL = "http://localhost:8080"
 }
