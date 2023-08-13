@@ -9,9 +9,9 @@ import com.example.borutoandroid.domain.model.HeroRemoteKey
 @Dao
 interface HeroRemoteKeyDao {
 
-    //add single hero remote key
+    //get single hero remote key
     @Query("SELECT * FROM hero_remote_key_table WHERE id = :id")
-    suspend fun addHeroRemoteKey(id : Int)
+    suspend fun getHeroRemoteKey(id : Int) : HeroRemoteKey?
 
     //insert all hero remote keys
     @Insert(onConflict = OnConflictStrategy.REPLACE)
