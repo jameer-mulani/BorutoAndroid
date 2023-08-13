@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -18,19 +20,26 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.borutoandroid.R
+import com.example.borutoandroid.navigation.Screen
 import com.example.todoappstefan2023.ui.theme.Purple500
 import com.example.todoappstefan2023.ui.theme.Purple700
 
 @Composable
-fun SplashScreen(navHostController: NavHostController) {
+fun SplashScreen(
+    navHostController: NavHostController,
+    splashViewModel: SplashViewModel = hiltViewModel()) {
 
     val scale = remember {
         Animatable(initialValue = 0f)
     }
 
-    //LaunchedEffect runs only the first time of composable execuation.
+    //collectAsState will make this variable as a state to be observed by composable.
+    val onBoardingStateCompleted by splashViewModel.onBoardingStateCompleted.collectAsState()
+
+    //LaunchedEffect runs only the first time of composable execution.
     LaunchedEffect(key1 = true){
         scale.animateTo(
             targetValue = 1f,
@@ -39,6 +48,14 @@ fun SplashScreen(navHostController: NavHostController) {
                 delayMillis = 250,
             )
         )
+
+        //pop the current composable from the backstack
+        navHostController.popBackStack()
+        if (onBoardingStateCompleted){
+            navHostController.navigate(Screen.Home.route)
+        }else{
+            navHostController.navigate(Screen.Welcome.route)
+        }
     }
 
     Splash(degrees = scale.value)

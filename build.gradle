@@ -11,7 +11,8 @@ ext {
     dataStoreVersion = '1.0.0'
     roomVersion = '2.5.2'
     daggerHiltVersion = '2.44'
-    navigationComposeVersion = '2.4.0-alpha06'
+    //required this version to be compatible for lib : hilt-navigation-compose
+    navigationComposeVersion = '2.5.3'
     compose_version = '1.0.5'
     accompanistVersion = '0.21.2-beta'
 }
