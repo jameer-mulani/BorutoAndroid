@@ -11,4 +11,8 @@ object Constants {
 
     //OnBoarding
     const val ONBOARDING_PAGE_COUNT = 3
+
+    //DataStore prefs
+    const val PREFERENCES_NAME = "boruto_prefs"
+    const val SET_ONBOARDING_STATE_KEY = "set_onboarding_state"
 }
