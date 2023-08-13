@@ -2,7 +2,7 @@ package com.example.borutoandroid.di
 
 import android.content.Context
 import com.example.borutoandroid.domain.repository.DataStoreOperations
-import com.example.borutoandroid.domain.repository.DataStoreOperationsImpl
+import com.example.borutoandroid.data.prefs.DataStoreOperationsImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
